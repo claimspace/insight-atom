@@ -1,13 +1,13 @@
 'use babel';
 
-import ClaimspaceCloud from '../lib/insight-atom';
+import InsightCloud from '../lib/insight-atom';
 
 // Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 //
 // To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 // or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe('ClaimspaceCloud', () => {
+describe('InsightCloud', () => {
   let workspaceElement, activationPromise;
 
   beforeEach(() => {
