@@ -1,0 +1,39 @@
+<div class="OpenProject">
+  {{#hasExisting}}
+    <h2>Open Local Project</h2>
+
+    <div class="Existing-list">
+      {{#existing}}
+        <div class="Existing" data-location="{{root}}">
+          <div class="Existing-logo">
+            <img src="{{logo}}" />
+          </div>
+          <div class="Existing-name">
+            <div class="Existing-fullname">{{name}}</div>
+            <div class="Existing-location">{{prettyRoot}}</div>
+          </div>
+        </div>
+      {{/existing}}
+    </div>
+  {{/hasExisting}}
+
+  <h2 class='block'>Download Project from Claimspace Cloud</h2>
+
+  <input class='input-text native-key-bindings OpenProject-subnetId' type='text' placeholder='Project ID'>
+
+  <div class='block'>
+    <button class='inline-block btn btn-primary icon icon-cloud-download OpenProject-submit'>Download</button>
+    <button class='inline-block btn OpenProject-cancel'>Cancel</button>
+  </div>
+
+  <div class="OpenProject-progress">
+    <progress class='inline-block'></progress>
+  </div>
+
+  <div class="OpenProject-error">
+    <div class="OpenProject-errorHeader text-error">Error downloading project!</div>
+    <div class="OpenProject-errorContent">
+      <pre></pre>
+    </div>
+  </div>
+</div>

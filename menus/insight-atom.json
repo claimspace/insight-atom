@@ -1,0 +1,29 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle insight-atom",
+        "command": "insight-atom:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Claimspace Cloud",
+      "submenu": [
+        {
+          "label": "My Account",
+          "command": "insight-atom:show-login-modal"
+        },
+        {
+          "label": "Open Project",
+          "command": "insight-atom:show-open-project-modal"
+        },
+        {
+          "label": "Enable IDE",
+          "command": "insight-atom:toggle"
+        }
+      ]
+    }
+  ]
+}

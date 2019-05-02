@@ -1,0 +1,266 @@
+scopeName: 'source.claim'
+name: 'Claim-lang'
+fileTypes: [
+  'space'
+  'model'
+  'line'
+]
+
+# firstLineMatch: '' # A regular expression that is matched against the first line of the document when Atom is trying to decide if the grammar is appropriate. Useful for shell scripts, mostly.
+# foldingStartMarker: '' # A regular expression that checks for the start of a foldable area (such as `{`).Ò
+# foldingStopMarker: '' # A regular expression that checks for the end of a foldable area (such as `}`). If both folding markers are matched in the same line, there will be no foldable area.
+
+patterns: [
+
+  # Annotations
+  #(.{0,})
+  {
+    name: 'constant.library.claim'
+    begin: '(^(\\ ){0,})([A-Za-z0-9_]+)(\\:)'
+    beginCaptures:
+      # '0':
+      #   name: 'markup.underline.claim'
+      '0':
+        name: 'comment.block.claim'
+      '1':
+        name: 'comment.block.claim'
+      '2':
+        name: 'comment.block.claim'
+    end: '\\n'
+  }
+
+  # Spaces
+  {
+    match: '\\b(space|import|as|alias|mean|let|in)\\b'
+    name: 'keyword.other.claim'
+  }
+
+  # Models
+  {
+    name: 'keyword.other.claim'
+    match: '\\b(model|extend|apply|include|insert|describe|embed)\\b'
+  }
+
+  # Primitives
+  {
+    name: 'keyword.other.claim'
+    match: '\\b(story|claim|text)\\b'
+  }
+
+  # Asserts
+  {
+    name: 'keyword.other.claim'
+    match: '\\b(line|assume|assert|dispute|disclose|suspend|require|from|with)\\b'
+  }
+
+  # Paths
+  {
+    name: 'keyword.other.claim'
+    match: '\\b(path|step)\\b'
+  }
+
+  # Subjects
+  {
+    name: 'keyword.other.claim'
+    match: '\\b(object|subject|image)\\b'
+  }
+
+  # Objects
+  {
+    name: 'keyword.other.claim'
+    match: '\\b(object|ref|image)\\b'
+  }
+
+  # Masks
+  {
+    name: 'keyword.other.claim'
+    match: '\\b(book|article|essay|letter|person|paper|booksec|report)\\b'
+  }
+
+  {
+    name: 'keyword.other.claim'
+    match: '\\b(concept|algorithm|datastruct|theorem|module|dataset|measure)\\b'
+  }
+
+  # Tmp Masks
+  {
+    name: 'keyword.other.claim'
+    match: '\\b(module|mod|example|ex|train|compose|example|define|def|proof|theorem|seq|set|list|coll)\\b'
+  }
+
+  # ... ?
+  {
+    name: 'keyword.other.claim'
+    match: ':'
+  }
+
+  # Declare and include
+  {
+    name: 'keyword.other.claim'
+    match: '\\+\\='
+  }
+
+  # Compact Assert
+  {
+    name: 'keyword.other.claim'
+    match: '\\+'
+  }
+
+  # Compact Dispute
+  {
+    name: 'keyword.other.claim'
+    match: '\\~'
+  }
+
+  # Compact Line
+  {
+    name: 'keyword.other.claim'
+    match: '\\ \\\\'
+  }
+
+  # Include
+  {
+    name: 'keyword.other.claim'
+    match: '\\-'
+  }
+
+  # From
+  {
+    name: 'keyword.other.claim'
+    match: '\\<'
+  }
+
+  # Insert
+  {
+    name: 'keyword.other.claim'
+    match: '\\>'
+  }
+
+  # Suspend
+  {
+    name: 'keyword.other.claim'
+    match: '\\?'
+  }
+
+  # Mounts
+  {
+    name: 'variable.other.claim'
+    match: '\\$[A-Za-z]([A-Za-z0-9_.-]+)?'
+  }
+
+  # Users
+  {
+    name: 'constant.language.claim'
+    match: '\\@[A-Za-z0-9_]([A-Za-z0-9_]+)?'
+  }
+
+  # Subjects
+  {
+    name: 'constant.language.claim'
+    match: '\\#[A-Za-z]([A-Za-z0-9_.]+)?'
+  }
+
+  # Objects
+  {
+    name: 'constant.language.claim'
+    match: '\\\'[A-Za-z]([A-Za-z0-9_.]+)?'
+  }
+
+  # Symbols
+  {
+    name: 'variable.other.claim'
+    match: '\\*([A-Za-z0-9_]+)?'
+  }
+
+  # Claims
+  {
+    name: 'variable.other.claim'
+    match: '\\!([A-Za-z0-9_]+)?'
+  }
+
+  # Rich Text
+  {
+    name: 'constant.library.claim'
+    begin: '\\ (\\+|~|\\?|<)?\\='
+    beginCaptures:
+      '0':
+        name: 'keyword.other.claim'
+    end: '\\n'
+    patterns: [
+      {
+        name: 'variable.other.claim'
+        match: '\\*[A-Za-z]([A-Za-z0-9_]+)?'
+      }
+
+      {
+        name: 'variable.other.claim'
+        match: '\\!([A-Za-z0-9_]+)?'
+      }
+
+      {
+        name: 'constant.language.claim'
+        match: '\\#[A-Za-z]([A-Za-z0-9_.]+)?'
+      }
+
+      {
+        name: 'constant.language.claim'
+        match: '\\\'[A-Za-z]([A-Za-z0-9_.]+)?'
+      }
+
+      {
+        name: 'variable.other.claim'
+        match: '\\@[A-Za-z0-9_]([A-Za-z0-9_]+)?'
+      }
+    ]
+  }
+
+  # Inline Html
+  {
+    name: 'constant.library.claim'
+    begin: '\\ \\+?\\|'
+    beginCaptures:
+      '0':
+        name: 'keyword.other.claim'
+    end: '\\n'
+    patterns: [
+      {
+        include: 'source.gfm'
+      }
+    ]
+  }
+
+  # Line self ref
+  {
+    name: 'constant.language.claim'
+    match: '\\^'
+  }
+
+  # Comments
+  {
+    name: 'comment.block.claim'
+    begin: '\\#\\ [A-Za-z]([A-Za-z0-9_.]+)?'
+    end: '\\n'
+  }
+
+  {
+    name: 'comment.block.claim'
+    begin: '\\#[\\ ]+'
+    end: '\\n'
+  }
+
+  {
+    name: 'comment.block.claim'
+    begin: '\\#'
+    end: '\\n'
+  }
+]
+# repository: # An array of rules. If you're going to be referencing one bit of code over and over again, stick it here so that you can edit all in one place.
+  # ruleName: # Can be anything.
+  #   {
+  #     name: ''
+  #     match: ''
+  #     end: ''
+  #     endCaptures:
+  #       0:
+  #         name: ''
+  #   }

@@ -1,0 +1,24 @@
+<div class="Home">
+
+  <div class="Home-logo">
+    {{>logo}}
+  </div>
+
+  {{#isLoggedIn}}
+    <div class="Home-welcome">
+      Welcome back, @{{username}}.
+    </div>
+  {{/isLoggedIn}}
+
+  <div class="Home-actions">
+
+  {{#isLoggedIn}}
+    <button class="HomeAction HomeAction-openProject">Open Project</button>
+    <button class="HomeAction HomeAction-login">My Account</button>
+  {{/isLoggedIn}}
+
+  {{#isNotLoggedIn}}
+    <button class="HomeAction HomeAction-login">Login</button>
+  {{/isNotLoggedIn}}
+
+</div>

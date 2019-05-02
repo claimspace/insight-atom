@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Compiling templates..."
+
+node compile-templates.js
+
+echo "Committing templates..."
+
+git add templates-build
+
+git commit -m "Built templates for apm release"
+
+echo "Pushing to github..."
+
+git push
+
+echo "Performing apm publish "
+
+apm publish "$@"

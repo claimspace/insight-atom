@@ -1,0 +1,24 @@
+{
+  "name": "insight-atom",
+  "main": "./lib/insight-atom",
+  "version": "0.2.36",
+  "description": "The Claimspace Cloud IDE",
+  "keywords": [],
+  "activationCommands": {
+    "atom-workspace": [
+      "insight-atom:toggle",
+      "insight-atom:toggle-native"
+    ]
+  },
+  "repository": "https://github.com/c1aimspace/insight-atom",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "js-yaml": "3.10.0",
+    "hogan.js": "3.0.2",
+    "dugite": "1.49.0",
+    "opn": "5.2.0"
+  }
+}

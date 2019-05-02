@@ -1,0 +1,95 @@
+<div class="SubnetPanel">
+
+  <div class="Subnet-overlay">
+    <div class='insight-loader'>foo</div>
+  </div>
+
+  <div class="Subnet-content">
+    <div class="Subnet-header">
+      {{#subnet}}
+        <div class="Subnet-logo">
+          <img src="{{logo}}" />
+        </div>
+        <div class="Subnet-name">
+          <div class="Subnet-fullname">
+            {{name}}
+          </div>
+          <div class="Subnet-id">
+            Project ID: {{fileId}}
+          </div>
+        </div>
+      {{/subnet}}
+    </div>
+
+    {{#branches}}
+      {{#active}}
+        <div class='Subnet-activeBranch block' data-name="{{name}}">
+          <h2 class='block'>Open Version</h2>
+
+          <div class="Subnet-activeName text-success">{{prettyName}}</div>
+
+          {{#isMaster}}
+            <div class="Subnet-masterMessage">
+              <p>You are currently viewing the live version.</p>
+              <p>To make changes, first create a new version, or select an existing one from the versions list.</p>
+            </div>
+          {{/isMaster}}
+
+          <div class="block">
+            {{#isWip}}
+              <button class='inline-block btn btn-primary Subnet-preview'>Preview</button>
+            {{/isWip}}
+            {{#canUpdate}}
+              <button class='inline-block btn Subnet-update'>Sync</button>
+            {{/canUpdate}}
+            {{#isWip}}
+              <button class='inline-block btn Subnet-publish'>Publish</button>
+            {{/isWip}}
+          </div>
+
+          <progress class='inline-block'></progress>
+        </div>
+      {{/active}}
+
+      <div class="Subnet-newBranch">
+        <h2 class='block'>New Version</h2>
+
+        <input class='input-text native-key-bindings Subnet-newBranchName' type='text' placeholder='New Version Name'>
+
+        <div class="block">
+          <button class='inline-block btn Subnet-newBranchCreate'>Create Version</button>
+        </div>
+
+        <progress class='inline-block'></progress>
+      </div>
+
+      <div class="Subnet-branches">
+        <h2 class='block'>Versions</h2>
+
+        {{#open}}
+          {{>branch}}
+        {{/open}}
+      </div>
+
+      {{#hasPublishedVersions}}
+        <div class="Subnet-branches">
+          <h2 class='block'>Published Versions</h2>
+
+          {{#published}}
+            {{>branch}}
+          {{/published}}
+        </div>
+      {{/hasPublishedVersions}}
+
+      {{#hasArchivedVersions}}
+        <div class="Subnet-branches">
+          <h2 class='block'>Archived Versions</h2>
+
+          {{#archived}}
+            {{>branch}}
+          {{/archived}}
+        </div>
+      {{/hasArchivedVersions}}
+    {{/branches}}
+  </div>
+</div>

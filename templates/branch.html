@@ -1,0 +1,20 @@
+<div class="Subnet-branch {{#isActive}}Subnet-branch--active{{/isActive}}">
+  <div class="Subnet-branchName">{{prettyName}}</div>
+  <div class="Subnet-branchActions" data-name="{{name}}">
+    {{#isActive}}
+      <div class="Subnet-branchIsActive">(Currently Open)</div>
+    {{/isActive}}
+
+    {{#canOpen}}
+      <a href="#" class="Subnet-branchOpen">Open</a>
+    {{/canOpen}}
+
+    {{#canArchive}}
+      <a href="#" class="Subnet-branchArchive">Archive</a>
+    {{/canArchive}}
+
+    {{#canDelete}}
+      <a href="#" class="Subnet-branchDelete">Delete</a>
+    {{/canDelete}}
+  </div>
+</div>
