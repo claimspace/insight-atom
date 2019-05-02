@@ -2,7 +2,7 @@
   "name": "insight-atom",
   "main": "./lib/insight-atom",
   "version": "0.2.36",
-  "description": "The Claimspace Cloud IDE",
+  "description": "The Insight Cloud IDE",
   "keywords": [],
   "activationCommands": {
     "atom-workspace": [
@@ -10,7 +10,7 @@
       "insight-atom:toggle-native"
     ]
   },
-  "repository": "https://github.com/c1aimspace/insight-atom",
+  "repository": "https://github.com/claimspace/insight-atom",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

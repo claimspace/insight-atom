@@ -1,6 +1,7 @@
-scopeName: 'source.claim'
-name: 'Claim-lang'
+scopeName: 'source.insight'
+name: 'Insight'
 fileTypes: [
+  'i',
   'space'
   'model'
   'line'
@@ -15,200 +16,200 @@ patterns: [
   # Annotations
   #(.{0,})
   {
-    name: 'constant.library.claim'
+    name: 'constant.library.insight'
     begin: '(^(\\ ){0,})([A-Za-z0-9_]+)(\\:)'
     beginCaptures:
       # '0':
-      #   name: 'markup.underline.claim'
+      #   name: 'markup.underline.insight'
       '0':
-        name: 'comment.block.claim'
+        name: 'comment.block.insight'
       '1':
-        name: 'comment.block.claim'
+        name: 'comment.block.insight'
       '2':
-        name: 'comment.block.claim'
+        name: 'comment.block.insight'
     end: '\\n'
   }
 
   # Spaces
   {
     match: '\\b(space|import|as|alias|mean|let|in)\\b'
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
   }
 
   # Models
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\b(model|extend|apply|include|insert|describe|embed)\\b'
   }
 
   # Primitives
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\b(story|claim|text)\\b'
   }
 
   # Asserts
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\b(line|assume|assert|dispute|disclose|suspend|require|from|with)\\b'
   }
 
   # Paths
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\b(path|step)\\b'
   }
 
   # Subjects
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\b(object|subject|image)\\b'
   }
 
   # Objects
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\b(object|ref|image)\\b'
   }
 
   # Masks
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\b(book|article|essay|letter|person|paper|booksec|report)\\b'
   }
 
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\b(concept|algorithm|datastruct|theorem|module|dataset|measure)\\b'
   }
 
   # Tmp Masks
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\b(module|mod|example|ex|train|compose|example|define|def|proof|theorem|seq|set|list|coll)\\b'
   }
 
   # ... ?
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: ':'
   }
 
   # Declare and include
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\+\\='
   }
 
   # Compact Assert
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\+'
   }
 
   # Compact Dispute
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\~'
   }
 
   # Compact Line
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\ \\\\'
   }
 
   # Include
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\-'
   }
 
   # From
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\<'
   }
 
   # Insert
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\>'
   }
 
   # Suspend
   {
-    name: 'keyword.other.claim'
+    name: 'keyword.other.insight'
     match: '\\?'
   }
 
   # Mounts
   {
-    name: 'variable.other.claim'
+    name: 'variable.other.insight'
     match: '\\$[A-Za-z]([A-Za-z0-9_.-]+)?'
   }
 
   # Users
   {
-    name: 'constant.language.claim'
+    name: 'constant.language.insight'
     match: '\\@[A-Za-z0-9_]([A-Za-z0-9_]+)?'
   }
 
   # Subjects
   {
-    name: 'constant.language.claim'
+    name: 'constant.language.insight'
     match: '\\#[A-Za-z]([A-Za-z0-9_.]+)?'
   }
 
   # Objects
   {
-    name: 'constant.language.claim'
+    name: 'constant.language.insight'
     match: '\\\'[A-Za-z]([A-Za-z0-9_.]+)?'
   }
 
   # Symbols
   {
-    name: 'variable.other.claim'
+    name: 'variable.other.insight'
     match: '\\*([A-Za-z0-9_]+)?'
   }
 
   # Claims
   {
-    name: 'variable.other.claim'
+    name: 'variable.other.insight'
     match: '\\!([A-Za-z0-9_]+)?'
   }
 
   # Rich Text
   {
-    name: 'constant.library.claim'
+    name: 'constant.library.insight'
     begin: '\\ (\\+|~|\\?|<)?\\='
     beginCaptures:
       '0':
-        name: 'keyword.other.claim'
+        name: 'keyword.other.insight'
     end: '\\n'
     patterns: [
       {
-        name: 'variable.other.claim'
+        name: 'variable.other.insight'
         match: '\\*[A-Za-z]([A-Za-z0-9_]+)?'
       }
 
       {
-        name: 'variable.other.claim'
+        name: 'variable.other.insight'
         match: '\\!([A-Za-z0-9_]+)?'
       }
 
       {
-        name: 'constant.language.claim'
+        name: 'constant.language.insight'
         match: '\\#[A-Za-z]([A-Za-z0-9_.]+)?'
       }
 
       {
-        name: 'constant.language.claim'
+        name: 'constant.language.insight'
         match: '\\\'[A-Za-z]([A-Za-z0-9_.]+)?'
       }
 
       {
-        name: 'variable.other.claim'
+        name: 'variable.other.insight'
         match: '\\@[A-Za-z0-9_]([A-Za-z0-9_]+)?'
       }
     ]
@@ -216,11 +217,11 @@ patterns: [
 
   # Inline Html
   {
-    name: 'constant.library.claim'
+    name: 'constant.library.insight'
     begin: '\\ \\+?\\|'
     beginCaptures:
       '0':
-        name: 'keyword.other.claim'
+        name: 'keyword.other.insight'
     end: '\\n'
     patterns: [
       {
@@ -231,25 +232,25 @@ patterns: [
 
   # Line self ref
   {
-    name: 'constant.language.claim'
+    name: 'constant.language.insight'
     match: '\\^'
   }
 
   # Comments
   {
-    name: 'comment.block.claim'
+    name: 'comment.block.insight'
     begin: '\\#\\ [A-Za-z]([A-Za-z0-9_.]+)?'
     end: '\\n'
   }
 
   {
-    name: 'comment.block.claim'
+    name: 'comment.block.insight'
     begin: '\\#[\\ ]+'
     end: '\\n'
   }
 
   {
-    name: 'comment.block.claim'
+    name: 'comment.block.insight'
     begin: '\\#'
     end: '\\n'
   }
