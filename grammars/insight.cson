@@ -45,7 +45,7 @@ patterns: [
   # Primitives
   {
     name: 'keyword.other.insight'
-    match: '\\b(story|claim|text)\\b'
+    match: '\\b(story|claim|text|doc)\\b'
   }
 
   # Asserts
@@ -125,7 +125,7 @@ patterns: [
     match: '\\-'
   }
 
-  # From
+  # Extend
   {
     name: 'keyword.other.insight'
     match: '\\<'
@@ -135,6 +135,12 @@ patterns: [
   {
     name: 'keyword.other.insight'
     match: '\\>'
+  }
+
+  # Apply
+  {
+    name: 'keyword.other.insight'
+    match: '\\^'
   }
 
   # Suspend
@@ -179,13 +185,26 @@ patterns: [
     match: '\\!([A-Za-z0-9_]+)?'
   }
 
+  # Public Route
+  {
+    name: 'comment.block.insight'
+    match: '\\`([A-Za-z0-9_]+)'
+  }
+
+  #
+  {
+    name: 'comment.other.insight'
+    begin: '^( +)?/'
+    end: '\\n'
+  }
+
   # Rich Text
   {
-    name: 'constant.library.insight'
+    name: 'comment.other.insight'
     begin: '\\ (\\+|~|\\?|<)?\\='
     beginCaptures:
       '0':
-        name: 'keyword.other.insight'
+        name: 'comment.other.insight'
     end: '\\n'
     patterns: [
       {
@@ -225,9 +244,126 @@ patterns: [
     end: '\\n'
     patterns: [
       {
-        include: 'source.gfm'
+        include: '#imd'
       }
     ]
+  }
+
+  {
+    # let foo >
+    'begin': '^(\\s*)([a-z]+) (.+) (\\>)$'
+    'beginCaptures':
+      '2':
+        'name': 'keyword.other.insight'
+
+      '4':
+        'name': 'keyword.other.insight'
+    'end': '^(?!$)(?!\\1\\s+)'
+    'contentName': 'comment.block.insight'
+    'patterns': [
+      {
+        include: '#imd'
+      }
+    ]
+  }
+
+
+  {
+    # let foo >
+    'begin': '^([a-z]+) (.+) (\\>)$'
+    'beginCaptures':
+      '2':
+        'name': 'keyword.other.insight'
+
+      '4':
+        'name': 'keyword.other.insight'
+    'end': '^(?!$)(?!\\1\\s+)'
+    'contentName': 'comment.block.insight'
+    'patterns': [
+      {
+        include: '#imd'
+      }
+    ]
+  }
+
+  {
+    # >>>
+    'begin': '^(\\s*)(\\>\\>\\>)(.+)?$'
+    'beginCaptures':
+      '2':
+        'name': 'keyword.other.insight'
+
+      '3':
+        'name': 'comment.block.insight'
+    'end': '^(?!$)(?!\\1\\s+)'
+    'contentName': 'comment.block.insight'
+    'patterns': [
+      {
+        include: '#imd'
+      }
+    ]
+  }
+
+  {
+    # >>>
+    'begin': '^(\\>\\>\\>)(.+)?$'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.other.insight'
+
+      '2':
+        'name': 'keyword.other.insight'
+
+      '3':
+        'name': 'comment.block.insight'
+    'end': '^(?!$)(?!\\1\\s+)'
+    'contentName': 'comment.block.insight'
+    'patterns': [
+      {
+        include: '#imd'
+      }
+    ]
+  }
+
+  {
+    # >
+    'begin': '^(\\s*)(\\>)$'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.other.insight'
+
+      '2':
+        'name': 'keyword.other.insight'
+
+      '3':
+        'name': 'comment.block.insight'
+    'end': '^(?!$)(?!\\1\\s+)'
+    'contentName': 'comment.block.insight'
+    'patterns': [
+      {
+        include: '#imd'
+      }
+    ]
+  }
+
+  {
+    'begin': '^(\\s*)(---?)(.+)$'
+    'beginCaptures':
+      '2':
+        'name': 'keyword.other.insight'
+      '3':
+        'name': 'comment.block.insight'
+    'end': '\\n'
+  }
+
+  {
+    'begin': '^(\\s*)(>>)(.+)$'
+    'beginCaptures':
+      '2':
+        'name': 'keyword.other.insight'
+      '3':
+        'name': 'comment.block.insight'
+    'end': '\\n'
   }
 
   # Line self ref
@@ -255,6 +391,26 @@ patterns: [
     end: '\\n'
   }
 ]
+
+repository: {
+  'imd':
+    patterns: [
+      {
+        'include': 'source.gfm'
+      }
+      {
+        'begin': '^(\\s*)(#.+)$'
+        'end': '\\n'
+        'beginCaptures':
+          '2':
+            'name': 'keyword.other.insight'
+      }
+      {
+        name: 'variable.other.insight'
+        match: '\\{(([a-z\\-]+):)?([\\\'\\@\\*\\!\\$\\#A-Za-z0-9_\\.\\-]+)(\ ([^\\{]+))?\\}'
+      }
+    ]
+}
 # repository: # An array of rules. If you're going to be referencing one bit of code over and over again, stick it here so that you can edit all in one place.
   # ruleName: # Can be anything.
   #   {
