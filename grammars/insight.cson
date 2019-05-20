@@ -95,6 +95,12 @@ patterns: [
     match: ':'
   }
 
+  # ... ?
+  {
+    name: 'keyword.other.insight'
+    match: '\\.'
+  }
+
   # Declare and include
   {
     name: 'keyword.other.insight'
