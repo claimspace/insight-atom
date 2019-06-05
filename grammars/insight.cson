@@ -207,9 +207,9 @@ patterns: [
   #
   {
     name: 'comment.other.insight'
-    begin: '^( +)?(\\./)'
+    begin: '^( +)?(`)'
     beginCaptures:
-      '1':
+      '0':
         name: 'keyword.other.insight'
     end: '\\n'
   }
