@@ -204,6 +204,16 @@ patterns: [
     end: '\\n'
   }
 
+  #
+  {
+    name: 'comment.other.insight'
+    begin: '^( +)?(\\./)'
+    beginCaptures:
+      '1':
+        name: 'keyword.other.insight'
+    end: '\\n'
+  }
+
   # Rich Text
   {
     name: 'comment.other.insight'
