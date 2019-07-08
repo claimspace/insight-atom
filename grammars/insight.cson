@@ -101,6 +101,12 @@ patterns: [
     match: '\\.'
   }
 
+  # ... ?
+  {
+    name: 'keyword.other.insight'
+    match: '\\* '
+  }
+
   # Declare and include
   {
     name: 'keyword.other.insight'
@@ -182,7 +188,7 @@ patterns: [
   # Symbols
   {
     name: 'variable.other.insight'
-    match: '\\*([A-Za-z0-9_]+)?'
+    match: '\\*([A-Za-z0-9_]+)'
   }
 
   # Claims
@@ -215,7 +221,7 @@ patterns: [
     patterns: [
       {
         name: 'variable.other.insight'
-        match: '\\*[A-Za-z]([A-Za-z0-9_]+)?'
+        match: '\\*[A-Za-z]([A-Za-z0-9_]+)'
       }
 
       {
