@@ -16,7 +16,7 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "js-yaml": "3.10.0",
+    "js-yaml": "3.13.1",
     "hogan.js": "3.0.2",
     "dugite": "1.49.0",
     "opn": "5.2.0"
