@@ -32,7 +32,7 @@ patterns: [
 
   # Spaces
   {
-    match: '\\b(space|import|as|alias|mean|let|in|face)\\b'
+    match: '\\b(space|import|as|alias|mean|let|in|face|head)\\b'
     name: 'keyword.other.insight'
   }
 
