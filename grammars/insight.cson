@@ -30,9 +30,27 @@ patterns: [
     end: '\\n'
   }
 
+  # Common
+  {
+    match: '\\b(import|as|alias|mean|let|in|face|head|module)\\b'
+    name: 'keyword.other.insight'
+  }
+
   # Spaces
   {
-    match: '\\b(space|import|as|alias|mean|let|in|face|head)\\b'
+    match: '\\b(space)\\b'
+    name: 'keyword.other.insight'
+  }
+
+  # Feeds
+  {
+    match: '\\b(feed|item)\\b'
+    name: 'keyword.other.insight'
+  }
+
+  # Positions
+  {
+    match: '\\b(position)\\b'
     name: 'keyword.other.insight'
   }
 
@@ -80,7 +98,7 @@ patterns: [
 
   {
     name: 'keyword.other.insight'
-    match: '\\b(concept|algorithm|datastruct|theorem|module|dataset|measure)\\b'
+    match: '\\b(concept|algorithm|datastruct|theorem|dataset|measure)\\b'
   }
 
   # Tmp Masks
