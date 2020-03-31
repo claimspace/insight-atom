@@ -44,7 +44,7 @@ patterns: [
 
   # Feeds
   {
-    match: '\\b(feed|item)\\b'
+    match: '\\b(feed|item|revision)\\b'
     name: 'keyword.other.insight'
   }
 
