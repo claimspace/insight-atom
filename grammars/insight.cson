@@ -32,7 +32,7 @@ patterns: [
 
   # Common
   {
-    match: '\\b(import|as|alias|mean|let|in|face|head|module)\\b'
+    match: '\\b(import|as|alias|mean|let|in|face|quote|head|module)\\b'
     name: 'keyword.other.insight'
   }
 
