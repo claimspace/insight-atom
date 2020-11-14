@@ -1,7 +1,7 @@
 {
   "name": "insight-atom",
   "main": "./lib/insight-atom",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "The Insight Cloud IDE",
   "keywords": [],
   "activationCommands": {
