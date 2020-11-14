@@ -57,7 +57,7 @@ patterns: [
   # Models
   {
     name: 'keyword.other.insight'
-    match: '\\b(model|extend|apply|include|insert|describe|embed|triage)\\b'
+    match: '\\b(model|extend|apply|include|insert|describe|embed|triage|questions|responses)\\b'
   }
 
   # Primitives
