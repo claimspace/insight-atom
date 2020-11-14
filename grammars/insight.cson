@@ -173,11 +173,11 @@ patterns: [
     match: '\\^'
   }
 
-  # Suspend
-  {
-    name: 'keyword.other.insight'
-    match: '\\?'
-  }
+  # # Suspend
+  # {
+  #   name: 'keyword.other.insight'
+  #   match: '\\?'
+  # }
 
   # Mounts
   {
@@ -237,7 +237,7 @@ patterns: [
   # Rich Text
   {
     name: 'comment.other.insight'
-    begin: '\\ (\\+|~|\\?|<)?\\='
+    begin: '\\ (\\+|~|<)?\\='
     beginCaptures:
       '0':
         name: 'comment.other.insight'
