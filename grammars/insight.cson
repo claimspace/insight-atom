@@ -69,7 +69,7 @@ patterns: [
   # Asserts
   {
     name: 'keyword.other.insight'
-    match: '\\b(line|assume|assert|dispute|disclose|suspend|require|from|with|self)\\b'
+    match: '\\b(line|assume|assert|dispute|question|disclose|suspend|require|from|with|self)\\b'
   }
 
   # Paths
