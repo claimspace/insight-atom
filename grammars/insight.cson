@@ -212,7 +212,7 @@ patterns: [
   # Questions
   {
     name: 'variable.other.insight'
-    match: '\\?([A-Za-z0-9_-]+)'
+    match: '\\?[A-Za-z]([A-Za-z0-9_-]+)'
   }
 
   # Claims
@@ -250,12 +250,12 @@ patterns: [
 
       {
         name: 'variable.other.insight'
-        match: '\\!([A-Za-z0-9_-]+)?'
+        match: '\\![A-Za-z]([A-Za-z0-9_-]+)?'
       }
 
       {
         name: 'variable.other.insight'
-        match: '\\?([A-Za-z0-9_-]+)?'
+        match: '\\?[A-Za-z]([A-Za-z0-9_-]+)?'
       }
 
       {
