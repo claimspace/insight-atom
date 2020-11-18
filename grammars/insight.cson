@@ -367,11 +367,9 @@ patterns: [
   }
 
   {
-    'begin': '^(\\>)(.+)?$'
+    # >
+    'begin': '^(\\s*)(\\>)(.+)?$'
     'beginCaptures':
-      '1':
-        'name': 'keyword.other.insight'
-
       '2':
         'name': 'keyword.other.insight'
 
@@ -387,7 +385,7 @@ patterns: [
   }
 
   {
-    'begin': '^(\\<)(.+)?$'
+    'begin': '^(\\s*)(\\<)(.+)?$'
     'beginCaptures':
       '1':
         'name': 'keyword.other.insight'
