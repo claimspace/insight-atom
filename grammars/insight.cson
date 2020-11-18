@@ -38,7 +38,7 @@ patterns: [
 
   # Spaces
   {
-    match: '\\b(space)\\b'
+    match: '\\b(space|document)\\b'
     name: 'keyword.other.insight'
   }
 
