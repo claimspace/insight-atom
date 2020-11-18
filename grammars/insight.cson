@@ -385,23 +385,13 @@ patterns: [
   }
 
   {
-    'begin': '^(\\s*)(\\<)(.+)?$'
+    'begin': '^(\\s*)(\\<?)(.+)$'
     'beginCaptures':
-      '1':
-        'name': 'keyword.other.insight'
-
       '2':
         'name': 'keyword.other.insight'
-
       '3':
         'name': 'comment.block.insight'
-    'end': '^(?!$)(?!\\1\\s+)'
-    'contentName': 'comment.block.insight'
-    'patterns': [
-      {
-        include: '#imd'
-      }
-    ]
+    'end': '\\n'
   }
 
   {
